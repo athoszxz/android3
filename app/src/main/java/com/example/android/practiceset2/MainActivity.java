@@ -21,7 +21,8 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int scoreTime1 = 0;
+    int scoreTime2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,39 +31,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when the "+3 or +2 or Free" button on time 2 is clicked.
+     * This method is called when the "+3" button on time 1 is clicked.
      */
-    int scoreTime1 = 0;
-    int scoreTime2 = 0;
-
     public void time1Increment3(View view) {
         scoreTime1 = scoreTime1 + 3;
         displayTime1(scoreTime1);
     }
 
+    /**
+     * This method is called when the "+2" button on time 1 is clicked.
+     */
     public void time1Increment2(View view) {
         scoreTime1 = scoreTime1 + 2;
         displayTime1(scoreTime1);
     }
 
+    /**
+     * This method is called when the "Free" button on time 1 is clicked.
+     */
     public void time1Increment1(View view) {
         scoreTime1++;
         displayTime1(scoreTime1);
     }
 
     /**
-     * This method is called when the "+3 or +2 or Free" button on time 2 is clicked.
+     * This method is called when the "+3" button on time 2 is clicked.
      */
     public void time2Increment3(View view) {
         scoreTime2 = scoreTime2 + 3;
         displayTime2(scoreTime2);
     }
 
+    /**
+     * This method is called when the "+2" button on time 2 is clicked.
+     */
     public void time2Increment2(View view) {
         scoreTime2 = scoreTime2 + 2;
         displayTime2(scoreTime2);
     }
 
+    /**
+     * This method is called when the "Free" button on time 2 is clicked.
+     */
     public void time2Increment1(View view) {
         scoreTime2++;
         displayTime2(scoreTime2);
@@ -79,13 +89,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given quantity value on the screen.
+     * This method displays the given score for Team 1
      */
     private void displayTime1(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.time1_text_score);
         quantityTextView.setText("" + number);
     }
 
+    /**
+     * This method displays the given score for Team 2
+     */
     private void displayTime2(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.time2_text_score);
         quantityTextView.setText("" + number);
